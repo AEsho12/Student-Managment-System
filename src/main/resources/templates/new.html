@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Managment Dashboard</title>
+</head>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins,sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+
+
+.cta {
+  padding: 9px 25px;
+  background-color:  #AAC4FF;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+  color: white;
+}
+
+.cta:hover {
+  background-color: #7d59ba;
+}
+
+/* Mobile Nav */
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: width 0.5s ease 0s;
+}
+
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta,
+  .main-text p,
+  .main-content,
+  .box-heading {
+    display: none;
+  }
+  .menu {
+    display: initial;
+  }
+}
+/* Main Text */
+
+.container-fluid {
+    position: relative;
+    z-index: 2;
+    margin: 70px;
+    display: flex;
+    -ms-flex-direction: row;
+}
+.container-fluid h1{
+    font-size: 60px;
+}
+.main-text{
+    position: absolute;
+    z-index: 2;
+    padding: 5px;
+    opacity: 90%;
+    color: rgb(73, 73, 73);   
+}
+.cta2 {
+  padding: 9px 25px;
+  background-color:  #AAC4FF;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+  color: white;
+  margin: 10px;
+}
+
+.cta2:hover {
+  background-color: #7d59ba;
+}
+.cta3 {
+position: relative;
+padding: 5px 20px;
+border: none;
+width: 140px;
+border-radius: 50px;
+color: white;
+margin: 0px;
+bottom: 30px;
+background-color: #b2b2b2;
+background-color: rgba(0, 0, 0, .3);
+justify-content: left;
+display: flex;
+text-align: left;
+}
+
+.circ{
+    position: relative;
+    left: 20px;
+    top: 7px;
+    z-index: 2;
+    width: 10px;
+    height: 10px;
+    background: greenyellow;
+    border-radius: 50%
+}
+
+/* Heading Box */
+.box{
+    position: relative;
+    left: 650px;
+    width: 450px;
+    height: 400px;
+    padding: 50px;
+    margin: 20px;
+    background-color: whitesmoke;
+    box-shadow: 0 8px 32px 0 rgba(30, 20, 90, 0.14);
+}
+.box2{
+    position: relative;
+    bottom: 20px;
+    left: 1px;
+    width: 200px;
+    height: 80px;
+    background-color: #AAC4FF;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
+}
+.box3{
+    position: relative;
+    z-index: 2;
+    left: 230px;
+    width: 130px;
+    height: 300px;
+    background-color: #B1B2FF;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
+}
+.circle{
+    position: relative;
+    right:  250px;
+    top: 100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color:#FF9494;
+
+}
+/* About section */
+.main-content{
+    position: absolute;
+    color: rgb(73, 73, 73);
+    justify-content: center;
+    text-align: center;
+    margin: 50px;
+
+}
+.main-content h1{
+    font-size: 40px;
+}
+.content-box{
+    margin: 20px;
+    width: 600px;
+    height: 120px;
+}
+
+
+
+</style>
+<body>
+    <header>
+        <!--Navigation System-->
+        <a class="logo">MSS</a>
+        <a class="cta" th:href="@{/students}">Dashboard</a>
+        <p class="menu cta" th:href="@{/students}">Dashboard</p>
+    </header>
+
+    <!--Main-Text-->
+    <div class="container-fluid">
+        <div class="main-text">
+            <h1>Manage Students <br> 
+                faster and more <br>
+                efficient</h1>
+            <p>A new Effective way to keep track and manage students <br> progression after camps</p>
+            <a class="cta" th:href="@{/students}">Dashboard</a>
+        </div>
+        <div class="box-heading">
+            <div class="box">
+                <div class="cta3">Students
+                    <div class="circ"></div>
+                </div>
+                <div class="box2">
+                    <div class="box3">
+                        <div class="circle">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section>
+        <div class="main-content">
+            <h1>So What is MSS?</h1>
+            <div class="content-box">
+                <p>MSS is a free open Managment Service built to provide a system tracking databse used to manage student progression, after Education We encourage users to leave behind the old system database and try something new and effective. </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</body>
+<script>
+const doc = document;
+const menuOpen = doc.querySelector(".menu");
+const menuClose = doc.querySelector(".close");
+const overlay = doc.querySelector(".overlay");
+
+menuOpen.addEventListener("click", () => {
+  overlay.classList.add("overlay--active");
+});
+
+menuClose.addEventListener("click", () => {
+  overlay.classList.remove("overlay--active");
+});
+
+</script>
+</html>
